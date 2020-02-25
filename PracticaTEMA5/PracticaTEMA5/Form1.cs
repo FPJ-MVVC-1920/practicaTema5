@@ -23,15 +23,31 @@ namespace PracticaTEMA5
         {
 
         }
-
+        //MVVC-FPJ-1920 Modificacion en rama mia
         private void button1_Click(object sender, EventArgs e)
         {
             Alumno miAlumno = new Alumno();
-            String miAlumnoStr;
+            String miAlumnoStr, miAlumnoNotaTexto; // Añadimos miAlumnoNotaTexto
 
             miAlumno.Nombre = aluNombre.Text;
             miAlumno.Nota = Convert.ToInt32(aluNota.Text);
-            miAlumnoStr = aluNombre.Text + " " + aluNota.Text + (miAlumno.Aprobado ? " Aprobado" : " Suspenso") + "\n";
+            //asignamos valor a miAlumnoNotaTexto
+            if (miAlumno.Nota<5)
+            {
+                miAlumnoNotaTexto="Suspenso";
+            }
+            else if (miAlumno.Nota<7)
+            {
+                miAlumnoNotaTexto="Aprobado";
+            }
+            else
+                    miAlumnoNotaTexto="Sobresaliente";
+
+            /* Cambio MVVC-FPJ-1920
+             * miAlumnoStr = aluNombre.Text + " " + aluNota.Text + (miAlumno.Aprobado ? " Aprobado" : " Suspenso") + "\n";
+             */
+             miAlumnoStr = aluNombre.Text + " " + aluNota.Text + " " + miAlumnoNotaTexto + "\n";
+                
             listaAlumnos.AppendText(miAlumnoStr);
             misAlumnos.Agregar(miAlumno);
         }
