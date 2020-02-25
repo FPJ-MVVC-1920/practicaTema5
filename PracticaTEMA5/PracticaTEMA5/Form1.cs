@@ -35,6 +35,8 @@ namespace PracticaTEMA5
             listaAlumnos.AppendText(miAlumnoStr);
             misAlumnos.Agregar(miAlumno);
         }
+
+        
     }
 
     class Alumno
