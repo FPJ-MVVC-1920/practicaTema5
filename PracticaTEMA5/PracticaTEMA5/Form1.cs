@@ -40,8 +40,12 @@ namespace PracticaTEMA5
             {
                 miAlumnoNotaTexto="Aprobado";
             }
+            else if (miAlumno.Nota<9)
+            {
+                miAlumnoNotaTexto="Notable";
+            }
             else
-                    miAlumnoNotaTexto="Sobresaliente";
+                miAlumnoNotaTexto="Sobresaliente";
 
             /* Cambio MVVC-FPJ-1920
              * miAlumnoStr = aluNombre.Text + " " + aluNota.Text + (miAlumno.Aprobado ? " Aprobado" : " Suspenso") + "\n";
